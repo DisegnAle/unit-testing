@@ -16,14 +16,14 @@ module.exports = function (config) {
     ],
 
     preprocessors: {
-      '/*.js': ['coverage']
+      '*.js': ['coverage']
     },
 
 
     // list of files / patterns to load in the browser
     files: [
-      '/*.js',
-      '/*.spec.js'
+      '*.js',
+      '*.spec.js'
     ],
 
 
@@ -78,12 +78,13 @@ module.exports = function (config) {
     // Concurrency level
     // how many browser should be started simultaneous
     concurrency: Infinity,
+    
     coverageReporter: {
       dir: 'coverage/',
       reporters: [{
         type: 'html',
         subdir: 'html'
-      }]
+      },{ type: 'text-summary' }]
     }
   })
 }
